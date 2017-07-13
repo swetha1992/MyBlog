@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyBlog</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+
+<div class="blog">
+  
+  <div class="blog-page-left">
+    <div class="form">
+    	<p class="plaintext">welcome {{username}}</p>
+    	<form method = 'POST' action="{{ url_for('MyBlogHome') }}">
+  			<textarea rows="20" cols="48" placeholder="write your blog" name="blogcontent"></textarea>
+    		<button name="submit" value="submit">submit</button>
+    		<p class="message">{{message}}</p>
+    	</form>
+  	</div>
+ </div>
+
+ <div class="blog-page-right">
+ 	<div class="form">
+    	<p class="plaintext"> your previous blogs <br> you have {{blogcount}} blogs</p>
+    	<table>
+    	<th>date</th>
+    	<th>blog</th>
+		{% for count in range(blogcount) %}
+        <tr><td class="plaintext">{{ datelist[count] }}  </td><td class="plaintext"> {{ bloglist[count] }}</td></tr>
+    	{% endfor %}
+    	</table>
+
+    </div>
+ </div>
+</div>
+</body>
+</html>
+
+

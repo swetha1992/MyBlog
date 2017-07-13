@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyBlog</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+
+  <div class="blog-page">
+    <div class="form">
+    table login
+  
+    {% for count in range(count) %}
+        <p>user:{{ usernamelist[count] }}--{{ passwordlist[count] }}--{{ emaillist[count] }}</p>
+    {% endfor %}
+
+    table myblog
+    blogcount = {{blogcount}}
+{% for count in range(blogcount) %}
+        <p>blog:{{ blogusernamelist[count] }}--{{ bloglist[count] }}--{{ datelist[count] }}</p>
+    {% endfor %}
+
+
+
+
+  </div>
+ </div>
+</body>
+</html>
+
+
